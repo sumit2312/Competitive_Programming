@@ -1,0 +1,5 @@
+//Removing a particular character fom a string
+string s;
+char c;
+s.erase(remove(s.begin(), s.end(), c), s.end());
+
