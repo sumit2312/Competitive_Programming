@@ -2,6 +2,9 @@
 
 /*
 Find number of non-cyclic subgraph in a graph
+To detect if there is any cycle in the undirected graph or not, we will use the DFS traversal 
+for the given graph. For every visited vertex v, when we have found any adjacent vertex u, such
+that u is already visited, and u is not the parent of vertex v. Then one cycle is detected. 
 */
 
 ////***Sumit Kumar***********////
