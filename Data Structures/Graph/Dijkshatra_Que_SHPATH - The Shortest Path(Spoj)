@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll            long long
+#define int           ll
+#define pb            push_back
+#define mp            make_pair
+#define ff            first
+#define ss            second
+#define mod           1000000007
+#define INF           1000000000
+#define mxn           10005
+#define vi            vector<int>
+#define pii           pair<int,int>
+#define vii           vector< pii >
+#define f(i,n)        for(int i=0;i<n;i++)
+
+bool vis[mxn];
+int dist[mxn];
+
+int dijkshtra(vector<vii>& adj,int s,int e){
+    dist[s]=0;
+    priority_queue < pii> pq;
+    pq.push({0,s});
+
+    while(!pq.empty()){
+        pii p = pq.top();
+        pq.pop();
+        int u=p.ss;
+
+        if(vis[u]) continue;
+
+        int sz=adj[u].size();
+        f(i,sz){
+            int v=adj[u][i].ff;
+            int cost = adj[u][i].ss;
+            if(dist[v]>dist[u]+cost){
+                dist[v]=dist[u]+cost;
+                pq.push(mp(-dist[v], v));
+
+            }
+
+        }
+        vis[u] = true;
+        if(u==e) return dist[e];
+    }
+}
+
+
+signed main(){
+    int t;
+    cin>>t;
+    while(t--){
+        for(int i=0; i<mxn; i++){ dist[i] = INF; vis[i] = false; }
+        int n,ad;
+        cin>>n;
+        string city;
+        map<string,int> m;
+        vector<vii> adj(n+1);
+        f(i,n){
+            cin>>city;
+            m[city]=i+1;
+            cin>>ad;
+            f(j,ad){
+                int v,c;
+                cin>>v>>c;
+                adj[i+1].pb(mp(v,c));
+
+            }
+        }
+        int q;
+        cin>>q;
+        string beg,end;
+        f(i,q){
+            cin>>beg>>end;
+            cout<<dijkshtra(adj,m[beg] ,m[end])<<endl;
+            for(int i=0; i<mxn; i++){ dist[i] = INF; vis[i] = false; }
+        }
+    }  
+}
