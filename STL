@@ -3,3 +3,13 @@ string s;
 char c;
 s.erase(remove(s.begin(), s.end(), c), s.end());
 
+
+-----------------------------------------------------------------------
+
+
+// Set 
+set<int> s;
+s.insert()
+s.erase()
+// Find if an element is in the set
+set.find(x)!=s.end()  //Element is in the set
