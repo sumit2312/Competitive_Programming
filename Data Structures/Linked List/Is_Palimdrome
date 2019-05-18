@@ -1,0 +1,31 @@
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+
+--------------------------------
+
+
+bool isPalindrome(Node *head)
+{
+    Node *slow = head;
+    stack<int> s;
+    int i;
+    bool flag = 1;
+    while(slow!=NULL){
+        s.insert(slow->data);
+        slow = slow -> next;
+    }
+    while(head!=NULL){
+        i=s.top();
+        s.pop();
+        if(head -> data != i){
+            flag = false;
+            break;
+        }
+        head = head -> next;
+    }
+    return flag;
+}
+***************----------------------*******************
