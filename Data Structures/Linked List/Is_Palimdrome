@@ -14,7 +14,7 @@ bool isPalindrome(Node *head)
     int i;
     bool flag = 1;
     while(slow!=NULL){
-        s.insert(slow->data);
+        s.push(slow->data);
         slow = slow -> next;
     }
     while(head!=NULL){
