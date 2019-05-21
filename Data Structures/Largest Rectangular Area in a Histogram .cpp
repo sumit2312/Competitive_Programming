@@ -1,3 +1,5 @@
+// Stack Implementation
+
 class Solution {
 public:
     int largestRectangleArea(vector<int>& a) {
