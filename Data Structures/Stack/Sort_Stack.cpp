@@ -1,3 +1,8 @@
+-----------***************************------------------
+Video Link - https://www.youtube.com/watch?v=Jhaf7G_sO3k 
+--------------***********************----------------
+  
+  
 ///**************ALGO********************//
 Create a temporary stack say tmpStack.
 1.While input stack is NOT empty do this:
