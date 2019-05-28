@@ -1,0 +1,122 @@
+-------------------------------------------------------- 
+-----------------   METHOD 1 :  Brute Force   -----------
+----------------------------------------------------------
+  
+Java
+
+public class Solution {
+    public void rotate(int[] nums, int k) {
+        int temp, previous;
+        for (int i = 0; i < k; i++) {
+            previous = nums[nums.length - 1];
+            for (int j = 0; j < nums.length; j++) {
+                temp = nums[j];
+                nums[j] = previous;
+                previous = temp;
+            }
+        }
+    }
+}
+
+ Time Complexity - O(n*k) 
+ Space Complexity - O(1)
+ 
+ 
+ 
+------------------------------------------------------------------------ 
+-------------------     METHOD - 2 : Using Extra Array  -------------------
+---------------------------------------------------------------------------
+
+C++
+
+class Solution {
+public:
+    void rotate(vector<int>& v, int k) {
+        int n = v.size();
+        vector<int> a(n);
+        for(int i=0;i<n;i++){
+            a[(i+k)%n]=v[i];
+        }
+        for(int i=0;i<n;i++){
+            v[i]=a[i];
+        }
+    }
+};
+
+
+
+
+
+----------------------------------------------------------------------------------------
+--------------------     METHOD - 3: Using Cyclic Replacements    ----------------------
+----------------------------------------------------------------------------------------
+ 
+ java:
+ public class Solution {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        int count = 0;
+        for (int start = 0; count < nums.length; start++) {
+            int current = start;
+            int prev = nums[start];
+            do {
+                int next = (current + k) % nums.length;
+                int temp = nums[next];
+                nums[next] = prev;
+                prev = temp;
+                current = next;
+                count++;
+            } while (start != current);
+        }
+    }
+}
+
+-------------------------------------------------------------------------
+------------         METHOD - 4 Using Reverse:   ------------------------
+-------------------------------------------------------------------------
+    
+    +++++++    JAVA    ++++++++
+ 
+
+public class Solution {
+    public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+    public void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
+
+-------------    C++        ----------------------
+    
+class Solution {
+public:
+    void rotate(vector<int>& v, int k) {        
+        int n = v.size();
+        k = k%n;
+        reverse(v,0,n-1);
+        reverse(v,0,k-1);
+        reverse(v,k,n-1);
+    }
+    void reverse(vector<int>& v, int start,int end){
+        while(start<end){
+            int temp = v[start];
+            v[start] = v[end];
+            v[end] = temp;
+            start++;
+            end--;
+        }
+    }
+};
+
+  
+  
