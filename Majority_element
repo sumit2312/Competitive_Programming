@@ -1,3 +1,41 @@
+----------------------------------------------------------------------
+----------------------    Moore’s Voting Algorithm:   ----------------
+----------------------------------------------------------------------
+
+ ** This Method only works when we are given that majority element do exist in the array  **
+ 
+ IDEA - Basic idea of the algorithm is that if we cancel out each occurrence of an element e with all 
+        the other elements that are different from e then e will exist till end if it is a majority element.
+
+Time Complexity - O(n)
+Space complexity - o(1)
+
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+       int mx= 0;
+        int n= nums.size();
+        int count=1;
+        for(int i=1;i<n;i++){
+            if(nums[mx]== nums[i])
+                count++;
+            else count--;
+            if(count == 0){
+                mx = i;
+                count = 1;
+            }
+        }
+        return nums[mx];
+    }
+};
+
+
+---------------------------------------------
+---------------------------- OR -------------
+---------------------------------------------
+
+
 # include <bits/stdc++.h>
 using namespace std;
 int main ()
