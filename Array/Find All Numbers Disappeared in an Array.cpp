@@ -14,7 +14,7 @@ Output:
 */
 
 
-/* Idea is to collect each appeared number ans then replace the number at this index to negative value .
+/* Idea is to collect each appeared number and then replace the number at this index to negative value .
    So at last all the numbers which appear has negative value at their indices .
    
    
