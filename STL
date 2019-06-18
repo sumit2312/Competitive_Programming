@@ -1,9 +1,16 @@
+----------------------------       STRING        --------------------------------------
+
+
 //Removing a particular character fom a string
 string s;
 char c;
 s.erase(remove(s.begin(), s.end(), c), s.end());
 
+// TRANSFORM TO lowercase
+transform(s.begin(), s.end(), s.begin(), ::tolower);
 
+// TRANSFORM TO UPPERCASE
+transform(s.begin(), s.end(), s.begin(), ::toupper);
 -----------------------------------------------------------------------
 
 
