@@ -1,0 +1,25 @@
+//https://www.hackerrank.com/challenges/recursive-digit-sum/problem
+
+// Read this article, learn something new  -  http://applet-magic.com/digitsummod9.htm
+
+#include "bits/stdc++.h"
+using namespace std;
+
+int main(){
+    string n;
+    int p;
+    cin>>n>>p;
+    
+    int sum=0;
+    for(auto x:n){
+        sum+= (x-'0')%9;
+    }
+    p=p%9;
+    int ans = (sum*p)%9;
+    if(ans){
+        cout<<ans;
+    }else{
+        cout<<9;
+    }
+    return 0;
+}
