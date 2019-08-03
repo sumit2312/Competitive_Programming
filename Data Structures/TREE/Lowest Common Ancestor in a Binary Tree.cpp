@@ -16,6 +16,8 @@ struct Node
    to LCA. If both are not present, return 
    NULL. Else if left subtree contains any 
    of them return pointer to left.*/
+
+
 Node * lca(Node* root ,int n1 ,int n2 )
 {
    if(root==NULL) return NULL;
