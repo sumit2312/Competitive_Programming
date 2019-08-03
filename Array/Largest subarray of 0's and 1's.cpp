@@ -1,7 +1,7 @@
-//Traverse the array from front to end, let a variable cur increase by 1 if we encounter 1, decrease by 1 
+/*Traverse the array from front to end, let a variable cur increase by 1 if we encounter 1, decrease by 1 
 if we encounter 0. Use an hash table (unordered_map in C++) to record the first index for each values of cur.
 In each iteration, we look up the hash table for the first index at which cur has the same value. Output the 
-maximum index difference.
+maximum index difference.*/
 
 /*Here's an O(n)-time, O(n)-space algorithm. I'm not sure it's optimal, but it beats quadratic time.
 
