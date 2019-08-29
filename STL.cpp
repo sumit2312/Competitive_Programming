@@ -5,6 +5,8 @@
 
 ----------------------------       STRING        --------------------------------------
 
+ ------ isalnum()  --------
+The isalphanum() function returns a non-zero integer if an argument (character) passed to the function is an alphanumeric (alphabet and number) character.
 
 //Removing a particular character fom a string
 string s;
