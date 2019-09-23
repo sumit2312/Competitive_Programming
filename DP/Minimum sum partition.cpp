@@ -1,4 +1,10 @@
 //https://practice.geeksforgeeks.org/problems/minimum-sum-partition/0/?ref=self
+
+/* QUE - 
+Given an array, the task is to divide it into two sets S1 and S2 such that 
+the absolute difference between their sums is minimum.
+*/
+
 /*
 SIMPLE APPROACH:Follow subset sum problem,if subset sum exists then find the max value of sum 
 possible between 1 and sum/2,let this be m. Then diff is given by (sum-m)-m or sum-2*m.
