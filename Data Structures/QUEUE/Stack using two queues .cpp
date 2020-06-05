@@ -44,3 +44,34 @@ int QueueStack :: pop()
     q1.pop();
     return x;
 }
+/* ----------------------------------------- OR ---------------------------------------*/
+
+// Making pop operation costly
+
+/* We push in q1 . And during pop operation  we insert elements of q1 to q2 until size of q1 is equal to 1
+   Then pop from q1. And swap q1 ans q2 queues. 
+*/
+void QueueStack :: push(int x)
+{
+    q1.push(x);
+}
+
+/*The method pop which return the element poped out of the stack*/
+int QueueStack :: pop()
+{
+    if(q1.empty()){
+        return -1;
+    }
+    while(q1.size()>1){
+        q2.push(q1.front());
+        q1.pop();
+    }
+    int x = q1.front();
+    q1.pop();
+    queue<int> temp;
+    temp = q1;
+    q1 = q2;
+    q2 = temp;
+    return x;
+}
+
