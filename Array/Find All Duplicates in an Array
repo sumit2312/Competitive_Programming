@@ -32,3 +32,22 @@ public:
         return res;
     }
 };
+
+
+// ALTERNATE SOLUTION
+
+
+vector<int> duplicates(int a[], int n) {
+    vector<int> res;
+    for(int i=0;i<n;i++){
+        int index = a[i]%n; // we are taking modulo beacause some values may increased due to addition of n and we want its original value
+        a[index]+=n;
+    }
+    for(int i=0;i<n;i++){
+        if((a[i]/n)>1){
+            res.push_back(i);
+        }
+    }
+    if(res.size()==0) res.push_back(-1);
+    return res;
+}
